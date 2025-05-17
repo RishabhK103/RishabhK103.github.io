@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rishabh</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="text">
+      <h2>Hello, myself Rishabh</h2>
+      <hr />
+      <div class="about">
+        <h2>About Me</h2>
+        <p>
+          Currently persuing Engineering in Artificial Intelligence and Data
+          Science at AISSMS IOIT(2026)
+        </p>
+        <p>
+          Currently learning about AI & ML,MLops and Cloud. <br />
+          Passionate about Amazing Software like Linux, CUDA, AI Stuff
+          <br />
+          I use Arch btw.
+        </p>
+      </div>
+      <div class="experience">
+        <h2>
+          <a style="text-decoration: none"> Experience</a>
+          <span> ( <a href="./resume.pdf">resume</a> ) </span>
+        </h2>
+        <li>None 🥀(yet)</li>
+      </div>
+      <div class="Projects">
+        <h2>Projects</h2>
+        <li><a href="/workprojects">Work Projects</a></li>
+        <li><a href="/Hackathons">Hackathons</a></li>
+        <li><a href="/College">College projects</a></li>
+        <li><a href="/Personal">Personal Projects</a></li>
+      </div>
+      <div class="connect">
+        <h2>Connect with me</h2>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/rishabh-kothari-527a5824b/"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="https://github.com/RishabhK103">GitHub</a></li>
+          <li><a href="https://www.kaggle.com/rishabhkothari103">Kaggle</a></li>
+          <li><a href="https://X.com/RishabhK103">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="profile.jpg" alt="profile" />
+    </div>
+    <div class="Arch">
+      <img src="arch.png" alt="Arch" />
+    </div>
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" />
+        <span class="slider">
+          <span class="icon">🌙</span>
+        </span>
+      </label>
+    </div>
+  </body>
+  <script>
+    const profile = document.querySelector(".profile");
+    profile.addEventListener("click", () => {
+      // Add class to start animation
+      profile.classList.add("crazy");
+
+      // Remove class after animation ends so it can be clicked again
+      profile.addEventListener(
+        "animationend",
+        () => {
+          profile.classList.remove("crazy");
+        },
+        { once: true }
+      );
+    });
+    const toggle = document.getElementById("modeToggle");
+    const sliderIcon = document.querySelector(".slider .icon");
+    const body = document.body;
+
+    // Load saved preference
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    body.classList.add(savedTheme);
+    toggle.checked = savedTheme === "light";
+    sliderIcon.textContent = savedTheme === "light" ? "☀️" : "🌙";
+
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        body.classList.replace("dark", "light");
+        sliderIcon.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+      } else {
+        body.classList.replace("light", "dark");
+        sliderIcon.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+      }
+    });
+  </script>
+</html>
