@@ -11,8 +11,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #0d0d0d;
   color: #e5e5e5;
-  margin: 0px;
-  padding: 0 20px;
+  margin: 0;
 }
 
 .text {
@@ -28,13 +27,13 @@ body {
 h2 {
   font-weight: 700;
   margin-bottom: 12px;
-  color: #00d7e6;
+  color: #ffffff;
 }
 
 /* Divider */
 hr {
   border: none;
-  border-top: 2px solid #00e6e6;
+  border-top: 2px solid #ffffff;
   margin: 10px 0 30px 0;
 }
 
@@ -48,13 +47,13 @@ p {
 
 /* Links */
 a {
-  color: #00e6e6;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #5fffd7;
+  color: #000000;
   text-decoration: underline;
 }
 
@@ -79,7 +78,7 @@ a:hover {
 
 .Projects li a:hover,
 .connect li a:hover {
-  background-color: #00e6e6;
+  background-color: #000000;
   color: #121212;
 }
 
@@ -226,7 +225,7 @@ a:hover {
 }
 
 input:checked + .slider {
-  background-color: #00e6e6;
+  background-color: #ffffff;
 }
 
 input:checked + .slider:before {
@@ -240,7 +239,7 @@ body.dark {
 }
 
 body.dark a {
-  color: #00e6e6;
+  color: #ffffff;
 }
 
 body.dark .Projects li a,
@@ -251,12 +250,12 @@ body.dark .connect li a {
 
 body.dark .Projects li a:hover,
 body.dark .connect li a:hover {
-  background-color: #00e6e6;
+  background-color: #ffffff;
   color: #121212;
 }
 
 body.dark .profile {
-  border-color: #00e6e6;
+  border-color: #ffffff;
 }
 
 body.dark .profile:hover {
@@ -296,7 +295,7 @@ body.light .profile:hover {
 /* TEXT COLORS */
 
 body.dark h2 {
-  color: #00e6e6;
+  color: #ffffff;
 }
 
 body.light h2 {
@@ -318,7 +317,7 @@ body.light hr {
 }
 
 body.dark hr {
-  border-top: 2px solid #00e6e6;
+  border-top: 2px solid #ffffff;
 }
 /* Light mode full text color override */
 body.light {
