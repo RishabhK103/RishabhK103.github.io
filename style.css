@@ -19,7 +19,7 @@ body {
   line-height: 1.6;
   margin: 0 6cm;
   position: relative;
-  padding-right: 140px;
+  padding-right: 140px; /* Space for absolute positioned profile on desktop */
 }
 
 /* Headings */
@@ -58,7 +58,7 @@ a {
 }
 
 a:hover {
-  color: #000000;
+  color: #000000; /* This seems like a mistake for a dark theme, might intend #FFFFFF or a light color */
   text-decoration: underline;
 }
 
@@ -75,7 +75,7 @@ a:hover {
 
 .Projects li a:hover,
 .connect li a:hover {
-  background-color: #000000;
+  background-color: #000000; /* Similar to above, hover makes text #121212 (dark) on black bg */
   color: #121212;
 }
 
@@ -201,6 +201,10 @@ body.dark {
 body.dark a {
   color: #ffffff;
 }
+body.dark a:hover {
+  /* Added to fix dark text on dark background for general links */
+  color: #5fffd7; /* Or another light color */
+}
 
 body.dark .Projects li a,
 body.dark .connect li a {
@@ -210,8 +214,8 @@ body.dark .connect li a {
 
 body.dark .Projects li a:hover,
 body.dark .connect li a:hover {
-  background-color: #ffffff;
-  color: #121212;
+  background-color: #ffffff; /* White background */
+  color: #121212; /* Dark text - this is fine */
 }
 
 body.dark .profile {
@@ -258,7 +262,7 @@ body.light .connect li a:hover {
 }
 
 body.light .profile {
-  border-color: #ffffff;
+  border-color: #007acc; /* Changed from #ffffff for better visibility on light bg */
 }
 
 body.light .profile:hover {
@@ -303,42 +307,89 @@ body.light a:hover {
   margin: 0;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-  .text {
-    margin: 0 1rem;
-    padding-right: 20px;
-    max-width: 100%;
-  }
-
-  .profile {
-    position: static;
-    width: 320px;
-    height: 320px;
-    margin: 20px auto 30px auto;
-    box-shadow: none;
-    border-width: 2px;
-  }
-
-  .Arch {
-    display: none;
-  }
-
-  .theme-switch {
-    bottom: 15px;
-    right: 15px;
-  }
-
-  .slider {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    box-shadow: 0 3px 10px rgba(0, 188, 212, 0.3);
-  }
-}
-
 .full {
   max-width: 70%;
   margin: 0 auto;
   padding: 20px 40px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .text {
+    margin: 0 1rem; /* Use rem for responsive margins */
+    padding-right: 1rem; /* Adjust padding for smaller screens */
+    max-width: 100%; /* Allow text container to use full available width */
+    /* width: 100%; is inherited and fine */
+  }
+
+  .profile {
+    position: static; /* Change from absolute to flow with content */
+    width: 180px; /* Reduce size for mobile */
+    height: 180px; /* Reduce size for mobile */
+    margin: 30px auto; /* Center profile image with vertical margin */
+    box-shadow: none; /* Remove desktop shadow if not desired, or adjust */
+    border-width: 2px; /* Keep border consistent or adjust as needed */
+  }
+
+  .Arch {
+    display: none; /* Hide decorative element on small screens */
+  }
+
+  .fastfetch {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Adjust heading size for mobile */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust heading size for mobile */
+  }
+
+  p {
+    font-size: 1rem; /* Adjust paragraph font size for readability */
+    margin-bottom: 12px; /* Adjust spacing */
+  }
+
+  li {
+    font-size: 1rem; /* Adjust list item font size */
+    margin: 6px 0; /* Adjust spacing */
+  }
+
+  .experience li {
+    margin-left: 5px; /* Slightly reduce indent for experience items */
+  }
+
+  hr {
+    margin: 15px 0 25px 0; /* Adjust divider margins */
+  }
+
+  .Projects li a,
+  .connect li a {
+    padding: 5px 10px; /* Slightly smaller padding for buttons */
+    font-size: 0.9rem; /* Smaller font for button text */
+  }
+
+  .connect ul {
+    gap: 10px; /* Reduce gap between connect items */
+    justify-content: center; /* Center items if they wrap */
+  }
+
+  .theme-switch {
+    bottom: 15px; /* Keep adjusted position */
+    right: 15px; /* Keep adjusted position */
+  }
+
+  .slider {
+    width: 40px; /* Keep adjusted size */
+    height: 40px; /* Keep adjusted size */
+    font-size: 1.2rem; /* Keep adjusted font size */
+    box-shadow: 0 3px 10px rgba(0, 188, 212, 0.3); /* Keep adjusted shadow */
+  }
+
+  .full {
+    max-width: 95%; /* Allow .full container to use more width on mobile */
+    padding: 20px 1rem; /* Reduce side padding for mobile */
+  }
 }
