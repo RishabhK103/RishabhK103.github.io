@@ -21,6 +21,8 @@
           Passionate about Amazing Software like Linux, CUDA, AI Stuff
           <br />
           I use Arch btw.
+
+          <a href="/about/"><u>More about me</u></a>
         </p>
       </div>
       <div class="experience">
@@ -71,10 +73,8 @@
   <script>
     const profile = document.querySelector(".profile");
     profile.addEventListener("click", () => {
-      // Add class to start animation
       profile.classList.add("crazy");
 
-      // Remove class after animation ends so it can be clicked again
       profile.addEventListener(
         "animationend",
         () => {
@@ -87,7 +87,6 @@
     const sliderIcon = document.querySelector(".slider .icon");
     const body = document.body;
 
-    // Load saved preference
     const savedTheme = localStorage.getItem("theme") || "dark";
     body.classList.add(savedTheme);
     toggle.checked = savedTheme === "light";
