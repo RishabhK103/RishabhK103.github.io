@@ -17,12 +17,13 @@ body {
   max-width: 700px;
   width: 100%;
   line-height: 1.6;
-  margin: 0 6cm 0 6cm;
+  margin: 0 6cm;
   position: relative;
   padding-right: 140px;
 }
 
 /* Headings */
+h1,
 h2 {
   font-weight: 700;
   margin-bottom: 12px;
@@ -32,9 +33,8 @@ h2 {
 h1 {
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
-  margin-bottom: 12px;
-  color: #ffffff;
 }
+
 /* Divider */
 hr {
   border: none;
@@ -86,39 +86,6 @@ a:hover {
   margin-left: 10px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .text {
-    padding: 20px;
-    margin: 0;
-    padding-right: 20px;
-  }
-  body {
-    padding: 20px 10px;
-  }
-  .profile {
-    position: static;
-    width: 80px;
-    height: 12px;
-    margin: 20px auto;
-    display: block;
-  }
-}
-
-/* Connect section */
-.connect ul {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-.connect li {
-  margin: 0;
-}
-
 /* Profile section */
 .profile {
   position: absolute;
@@ -149,12 +116,15 @@ a:hover {
   box-shadow: 0 0 30px 5px #5fffd7;
 }
 
+/* Arch icon */
 .Arch {
   position: absolute;
   top: 450px;
   left: 770px;
   width: 20px;
 }
+
+/* Fastfetch */
 .fastfetch {
   display: block;
   margin: 0 7cm;
@@ -183,57 +153,43 @@ a:hover {
   animation: crazySpin 1.5s ease forwards;
 }
 
-/* Toggle switch */
+/* Theme switch button (desktop + mobile) */
 .theme-switch {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   z-index: 9999;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-
+/* Hidden checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
+/* Custom slider design */
 .slider {
-  position: absolute;
-  cursor: pointer;
-  background-color: #ccc;
-  border-radius: 34px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: 0.4s;
-}
-
-.slider:before {
-  content: "";
-  position: absolute;
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00bcd4;
   border-radius: 50%;
-  transition: 0.4s;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
 }
 
-input:checked + .slider {
-  background-color: #ffffff;
+.slider:hover {
+  transform: scale(1.05);
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px);
+body.light .slider {
+  background-color: #222;
+  color: #fff;
 }
 
 /* Dark Mode (default) */
@@ -266,10 +222,23 @@ body.dark .profile:hover {
   box-shadow: 0 0 30px 5px #5fffd7;
 }
 
+body.dark h2 {
+  color: #ffffff;
+}
+
+body.dark p,
+body.dark li {
+  color: #ccc;
+}
+
+body.dark hr {
+  border-top: 2px solid #ffffff;
+}
+
 /* Light Mode */
 body.light {
   background: #f5f5f5;
-  color: #1a1a1a;
+  color: #000;
 }
 
 body.light a {
@@ -296,36 +265,8 @@ body.light .profile:hover {
   box-shadow: 0 0 30px 5px #66ccff;
 }
 
-/* TEXT COLORS */
-
-body.dark h2 {
-  color: #ffffff;
-}
-
 body.light h2 {
   color: #005577;
-}
-
-body.dark p,
-body.dark li {
-  color: #ccc;
-}
-
-body.light p,
-body.light li {
-  color: #333;
-}
-
-body.light hr {
-  border-top: 2px solid #000000;
-}
-
-body.dark hr {
-  border-top: 2px solid #ffffff;
-}
-/* Light mode full text color override */
-body.light {
-  color: #000; /* base text color */
 }
 
 body.light p,
@@ -340,81 +281,52 @@ body.light a {
   color: #000 !important;
 }
 
+body.light hr {
+  border-top: 2px solid #000000;
+}
+
 body.light a:hover {
   color: #333 !important;
 }
-.theme-switch {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-}
 
-/* The hidden checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* Custom slider */
-.slider {
+/* Connect section */
+.connect ul {
+  padding: 0;
+  margin: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #00bcd4;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  transition: background-color 0.4s ease;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
 }
 
-body.light .slider {
-  background-color: #222;
-  color: #fff;
+.connect li {
+  margin: 0;
 }
 
-/* Optional: hover effects */
-.slider:hover {
-  transform: scale(1.05);
-}
-
-/* Adjust .text margins for smaller screens */
+/* Responsive design */
 @media (max-width: 600px) {
   .text {
-    margin: 0 1rem; /* small horizontal margin */
-    padding-right: 20px; /* keep some padding */
+    margin: 0 1rem;
+    padding-right: 20px;
     max-width: 100%;
   }
 
-  /* Make profile smaller and center it */
   .profile {
     position: static;
     width: 320px;
     height: 320px;
     margin: 20px auto 30px auto;
-    left: auto;
-    top: auto;
+    box-shadow: none;
     border-width: 2px;
-    box-shadow: none; /* optionally remove shadow on mobile */
   }
 
-  /* Reposition Arch image */
   .Arch {
     display: none;
   }
 
-  /* Theme switch smaller and more accessible */
   .theme-switch {
-    position: fixed;
     bottom: 15px;
     right: 15px;
-    width: 40px;
-    height: 40px;
-    z-index: 9999;
   }
 
   .slider {

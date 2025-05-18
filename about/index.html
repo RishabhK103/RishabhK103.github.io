@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
+    <!-- Theme Toggle -->
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider" id="themeIcon">🌙</span>
+      </label>
+    </div>
+
+    <!-- Page Content -->
     <div class="text full">
       <h1>About Me</h1>
       <p>
@@ -23,99 +32,99 @@
         software is all I yearn for. Still figuring things out, but I know I’m
         on the right path.
       </p>
+
       <section class="software-skills">
         <h2>Software Skills & Tools I've Learned</h2>
         <hr />
         <ul>
           <li>
-            <strong>Programming Languages:</strong> Python, C++, JavaScript. I
-            mostly use Python as the core building block of my projects.
+            <strong>Programming Languages:</strong> Python, C++, JavaScript.
           </li>
           <li>
-            <strong>Frameworks & Libraries:</strong> FastAPI, Flask, Django for
-            web apps, and Scikit-learn & TensorFlow for machine learning; MLflow
-            & Gradio for MLOps and testing.
+            <strong>Frameworks & Libraries:</strong> FastAPI, Flask, Django,
+            Scikit-learn, TensorFlow, MLflow, Gradio.
           </li>
           <li>
-            <strong>Tools & Platforms:</strong> Git for version control, Arch
-            Linux for daily use, VS Code & Jupyter Notebook for coding and
-            experimentation .Currently trying switching to neovim for faster
-            development.
+            <strong>Tools & Platforms:</strong> Git, Arch Linux, VS Code,
+            Jupyter, Neovim.
           </li>
           <li>
-            <strong>Concepts & Practices:</strong> Machine learning pipelines,
-            data analysis, MLOps workflows, and cloud basics(Mostly AWS).
+            <strong>Concepts:</strong> ML pipelines, data analysis, MLOps, cloud
+            basics (AWS).
           </li>
           <li>
-            <strong>Special Interests:</strong> Exploring operating systems and
-            CUDA for GPU programming, hoping to make some open source
-            contributions there.
+            <strong>Special Interests:</strong> OS internals, CUDA, open source
+            contributions.
           </li>
         </ul>
       </section>
+
       <section class="software-inspiration">
         <h2>Software That Inspires Me</h2>
         <hr />
         <ul>
           <li>
-            <strong>CPUs:</strong> It’s insane how tiny chips packed with
-            billions of transistors can understand zeros and ones and somehow
-            run entire worlds. The fact that this was engineered by people just
-            boggles my brain.
+            <strong>CPUs:</strong> The engineering behind them is mind-blowing.
           </li>
           <li>
-            <strong>CUDA:</strong>CUDA is a game changer for the AI world. It’s
-            the reason of NVIDIA’s dominance, allowing GPUs to process thousands
-            of tasks in parallel with unmatched efficiency. While there are
-            other technologies emerging, nothing quite matches CUDA’s level of
-            performance and ecosystem in driving forward AI and machine
-            learning.
+            <strong>CUDA:</strong> A game-changer for AI workloads and GPU
+            computing.
           </li>
           <li>
-            <strong>AWS:</strong>Every time I think about AWS, I’m just blown
-            away by how so many different systems like storage, compute,
-            networking work together flawlessly at such massive scale. The way
-            these pieces integrate and evolve, each one feeding into the next,
-            is pure genius. It’s like they’ve built this intricate web of
-            technology, and it just works perfectly
+            <strong>AWS:</strong> Incredible systems integration at scale.
           </li>
           <li>
-            <strong>Containers & Virtualization:</strong> Running a whole system
-            inside another system? And it actually works? Every time I learn how
-            Docker or virtual machines isolate environments, I pause and think —
-            how is this even real?
+            <strong>Containers:</strong> Isolation with Docker and VMs still
+            amazes me.
           </li>
           <li>
-            <strong>Python Ecosystem:</strong> Python is a vibe. The fact that
-            almost anything you imagine — web apps, data science, AI, scripting
-            — already has a package ready for it... It’s like standing on the
-            shoulders of countless brilliant people.
+            <strong>Python:</strong> A beautiful ecosystem where anything feels
+            possible.
           </li>
         </ul>
       </section>
+
       <section class="arch-linux-love">
         <h2>Why I Love Arch Linux</h2>
         <hr />
         <p>
-          Arch Linux isn’t just an operating system to me, it’s a lifestyle. The
-          way it gives you complete control over every little part of your
-          system made me fall in love with it. It taught me how Linux actually
-          works under the hood, from bootloaders to package managers.
+          Arch Linux isn’t just an OS, it’s a lifestyle. It taught me how Linux
+          works under the hood.
         </p>
         <p>
           I’ve broken things, fixed them, learned the hard way, and loved every
-          second of it. Arch doesn’t hold your hand, and that’s the best part —
-          it makes you *earn* your system, and you come out smarter every time.
+          second of it. Arch doesn’t hold your hand — and that’s the best part.
         </p>
         <p>
           Every time I boot into my clean, minimal, hand-crafted setup, I’m
-          reminded why I chose Arch. It’s fast, lightweight, and completely
-          mine. And yes... I use Arch, btw :)
+          reminded why I chose Arch. And yes... I use Arch, btw :)
         </p>
       </section>
     </div>
+
     <div class="fastfetch">
       <img src="fastfetch.png" alt="fastfetch" />
     </div>
+
+    <!-- Theme Toggle Script -->
+    <script>
+      const toggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+
+      // Load saved theme from localStorage
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light");
+        toggle.checked = true;
+        themeIcon.textContent = "☀️";
+      }
+
+      toggle.addEventListener("change", () => {
+        document.body.classList.toggle("light");
+        const isLight = document.body.classList.contains("light");
+
+        themeIcon.textContent = isLight ? "☀️" : "🌙";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+    </script>
   </body>
 </html>
