@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work Projects</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider" id="themeIcon">🌙</span>
+      </label>
+    </div>
+    <div class="text full">
+      <div class="header-with-nav">
+        <h1>Personal Projects</h1>
+        <div class="nav-home">
+          <a href="/">← Home</a>
+        </div>
+      </div>
+      <p>
+        A collection stuff I found cool on internet and my brain which I built with curiosity and code. <br>
+        <strong>These are deployed click on project titles to visit them!!</strong>
+      </p>
+      <hr />
+      <section class="project">
+        <h2>
+          <a href="https://prompthub-flax.vercel.app/">
+            <u>PromptHub | A Platform for Prompt Engineering and store useful prompts</u> 🔗
+          </a>
+        </h2>
+        <p>
+          <em>
+            December 2026 | Typescript, Nextjs, Supabase, TailwindCSS, Vercel
+          </em>
+        </p>
+        <p>
+          PromptHub is a platform for prompt engineering and storing useful prompts. It allows users to create, share, and discover prompts for various AI models.I saw a guy on Twitter named Pliny who made jailbraking prompts as soon as any new LLM was released. I thought to myself, why not make a platform where people can share such prompts and find them easily. So I made PromptHub using Nextjs for frontend, Supabase for backend and Vercel for hosting. It has features like user authentication, prompt creation, prompt sharing, prompt discovery, and prompt rating. It also has a clean and responsive UI built with TailwindCSS.Try it out and share your prompts! Feedbacks are welcome.
+      </section>
+      <section class="project">
+        <h2>
+          <a href="https://monkeyread.vercel.app/">
+            <u>MonkeyRead | A High-Performance RSVP Speed Reading App</u> 🔗
+          </a>
+        </h2>
+        <p>
+          <em>
+            January 2026 | TypeScript, Next.js, Zustand, TailwindCSS, Framer Motion, Vercel
+          </em>
+        </p>
+        <p>
+          MonkeyRead is a high-performance RSVP (Rapid Serial Visual Presentation) speed-reading application inspired by the minimalist design of Monkeytype. It helps users read text significantly faster by flashing words one at a time and highlighting the Optimal Recognition Point (ORP) to improve focus and comprehension. I saw a Viral reel on instagram about speed reading and thought of making an app for it. So I made MonkeyRead using Nextjs for frontend, Zustand for state management, and Vercel for hosting. It features adjustable reading speeds, customizable themes, and a clean, user-friendly interface built with TailwindCSS and Framer Motion for smooth animations. Give it a try to enhance your reading speed and efficiency!
+        </p>
+      </section>
+
+    </div>
+    <script>
+      const toggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+
+      // Load saved theme from localStorage
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light");
+        toggle.checked = true;
+        themeIcon.textContent = "☀️";
+      }
+
+      toggle.addEventListener("change", () => {
+        document.body.classList.toggle("light");
+        const isLight = document.body.classList.contains("light");
+
+        themeIcon.textContent = isLight ? "☀️" : "🌙";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>

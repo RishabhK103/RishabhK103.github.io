@@ -9,15 +9,20 @@
   <body>
     <div class="theme-switch">
       <label class="switch">
-        <input type="checkbox" id="themeToggle" />
-        <span class="slider" id="themeIcon">🌙</span>
+        <input type="checkbox" id="modeToggle" />
+        <span class="slider" id="sliderIcon">🌙</span>
       </label>
     </div>
 
     <div class="text full">
-      <h1>Work & Projects</h1>
+      <div class="header-with-nav">
+        <h1>Work & Projects</h1>
+        <div class="nav-home">
+          <a href="/">← Home</a>
+        </div>
+      </div>
       <p>
-        A collection of things I’ve built and explored with curiosity and code.
+        Stuff I did at work ,freelance work and some job interview projects.
       </p>
       <hr />
       <section class="project">
@@ -44,23 +49,155 @@
           manage the model and dataset versions throughout.
         </p>
       </section>
+      <section class="project">
+        <h2>
+          <a href="https://github.com/RishabhK103/invoice-qc-service">
+            <u>Invoice QC Service | Invoice Extraction & Quality Control Pipeline</u> 🔗
+          </a>
+        </h2>
+        <p>
+          <em>
+            2025 | Python, FastAPI, Streamlit, Pydantic, PDFPlumber, Docker
+          </em>
+        </p>
+        <p>
+          Invoice QC Service is a tool that extracts and validates structured data from PDF invoices against a defined schema and business rules, exposing CLI and API endpoints for integration. Built using Python with a FastAPI backend, Pydantic models define the invoice schema, and PDFPlumber handles extraction; a Streamlit UI offers quick interactive exploration. The service validates dates, financials, duplicates, and field completeness, generating structured reports you can use for automated downstream processing or integration into larger systems great for workflows that need clean invoice data without manual review.I made this for an internship project as a way for shortlisting anyway didnt get selected 🥀
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>Enterprise AI System – Search & Retrieval</u>
+        </h2>
+        <p>
+          <em>
+            Super-Secret Dates | Super-Secret Tech Stack
+          </em>
+        </p>
+        <p>
+          Ever felt like finding that one document in a mountain of data was a quest for a mythical beast? Well, I wrangled some serious AI magic to build an internal enterprise system for intelligent search and retrieval! We dove deep into understanding queries, boosting relevance, and making everything run super-fast across a jungle of different data sources. Think semantic retrieval, vector search wizardry, and LLM-powered brainpower. While NDAs mean I can't spill the beans on the juicy details (like which secret sauce ingredients we used!), this system was designed, tested, and shipped straight into a production environment. Pretty neat, right?
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>Enterprise AI System – Automated Validation</u>
+        </h2>
+        <p>
+          <em>
+            Top-Secret Dates | Classified Tech
+          </em>
+        </p>
+        <p>
+          Picture this: an AI that can *reason* across different types of data to make automated decisions. Sounds like sci-fi, but I got to play a part in bringing this automated validation system to life! My gig involved cooking up experimental pipelines, putting it through its paces with controlled datasets, and then polishing those AI outputs until they were reliable and, dare I say, *explainable*. Again, NDA means mum's the word on the specifics, but let's just say it was a blast making machines smarter!
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>Enterprise AI System – Operational Intelligence</u>
+        </h2>
+        <p>
+          <em>
+            Confidential Dates | Covert Tools
+          </em>
+        </p>
+        <p>
+          Ever wish your systems could tell you what's going wrong *before* it goes wrong? I explored that magic with an internal operational intelligence. We dove into automated analysis of logs and signals, trying out a bunch of ML and statistical approaches to sniff out anomalous patterns and give our operational folks superpowers for decision-making. No specifics (NDA, you know the drill!), but it was a deep dive into making systems predict the unpredictable!
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>Enterprise AI System – Agent-Based Automation</u>
+        </h2>
+        <p>
+          <em>
+            Top-Secret Timeline | Undercover Tech Stack
+          </em>
+        </p>
+        <p>
+          Imagine AI agents working together to automate enterprise workflows. Sounds like something out of a movie, right? I chipped in on building and extending just such an internal agent-based AI automation system! My focus was on making these agents better at delegating tasks, refining their reasoning powers, and seamlessly integrating them with various tools. NDAs keep my lips sealed on the exact use cases, but let's just say these agents are making workflows sing!
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>Enterprise AI System – Knowledge & Workflow Assistant</u>
+        </h2>
+        <p>
+          <em>
+            Hush-Hush Development | Classified Integrations
+          </em>
+        </p>
+        <p>
+          Who doesn't love a helpful assistant? I contributed to developing AI assistants powered by Retrieval-Augmented Generation (RAG) that play nicely with our internal enterprise tools. My role involved ensuring the system was reliable, secure with access control, and built with a modular service design. Again, NDA means I can't spill any more tea, but these assistants are making enterprise workflows a whole lot smoother!
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>Enterprise AI System – Persona & Prompt Engineering</u>
+        </h2>
+        <p>
+          <em>
+            Secret Development Period | Clandestine Techniques
+          </em>
+        </p>
+        <p>
+          Ever wonder how AI assistants get their "personality"? I helped shape that! My work involved building personadriven AI assistants by meticulously designing and testing prompt structures, figuring out the best reasoning patterns, and setting behavior constraints. I supported experimentation, documented the magic, and even gave some internal demos. NDA keeps me from revealing too much, but it was a fascinating journey into making AI assistants truly shine!
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>Multilingual NLP Classification & Analytics System</u>
+        </h2>
+        <p>
+          <em>
+            2025 | Python, spaCy, Transformers (Hugging Face), scikit-learn, FastAPI, Docker, AWS (S3, Lambda, Comprehend)
+          </em>
+        </p>
+        <p>
+          Developed a production-grade NLP pipeline for automated classification of high-volume, unstructured text into 36+ categories. Engineered for robustness against noisy inputs and code-mixed data (e.g., Hinglish), achieving >95% classification accuracy. The system significantly reduced manual review overhead and enabled advanced downstream analytics and reporting workflows. Key components included custom text pre-processing modules, fine-tuned transformer models for multilingual embedding, and a scalable microservices architecture.
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>LLM Optimization Under Tight Compute Constraints</u>
+        </h2>
+        <p>
+          <em>
+            2025 | Python, PyTorch, ONNX, Quantization (GPTQ, AWQ), Llama.cpp, LangChain, Prompt Engineering
+          </em>
+        </p>
+        <p>
+          Optimized large language model inference pipelines for deployment within strict GPU and VRAM limitations. Achieved efficient inference and structured output generation through strategic model selection, advanced quantization techniques (e.g., GPTQ, AWQ), and fine-tuned prompt engineering. This enabled high-throughput text classification and reporting in resource-constrained environments while maintaining accuracy and reliability.
+        </p>
+      </section>
+      <section class="project">
+        <h2>
+          <u>LLM-Powered Transcript-to-Structured-Data Pipeline</u>
+        </h2>
+        <p>
+          <em>
+            2025 | Python, OpenAI API, Anthropic API, Pydantic, JSON Schema, FastAPI, Kubernetes, Apache Kafka
+          </em>
+        </p>
+        <p>
+          Designed and implemented an LLM-based system to transform unstructured speech-to-text transcripts into validated JSON outputs. Focused on ensuring schema consistency, robust error handling, and high output reliability. The pipeline achieved >90% structured data extraction accuracy, reducing manual processing effort by approximately 80% across operational workflows. Leveraged Pydantic for schema enforcement and integrated with Kubernetes for scalable deployment and Apache Kafka for real-time data streaming.
+        </p>
+      </section>
     </div>
     <script>
-      const toggle = document.getElementById("themeToggle");
-      const themeIcon = document.getElementById("themeIcon");
+      const toggle = document.getElementById("modeToggle");
+      const sliderIcon = document.getElementById("sliderIcon");
 
       // Load saved theme from localStorage
       if (localStorage.getItem("theme") === "light") {
         document.body.classList.add("light");
         toggle.checked = true;
-        themeIcon.textContent = "☀️";
+        sliderIcon.textContent = "☀️";
       }
 
       toggle.addEventListener("change", () => {
         document.body.classList.toggle("light");
         const isLight = document.body.classList.contains("light");
 
-        themeIcon.textContent = isLight ? "☀️" : "🌙";
+        sliderIcon.textContent = isLight ? "☀️" : "🌙";
         localStorage.setItem("theme", isLight ? "light" : "dark");
       });
     </script>

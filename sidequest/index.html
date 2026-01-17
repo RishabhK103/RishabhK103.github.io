@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Side Quests</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="theme-switch">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle" />
+        <span class="slider" id="themeIcon">🌙</span>
+      </label>
+    </div>
+
+    <div class="text full">
+      <div class="header-with-nav">
+        <h1>Random Side Quests</h1>
+        <div class="nav-home">
+          <a href="/">← Home</a>
+        </div>
+      </div>
+      <p>
+        Small experiments, weekend builds, and random ideas I found interesting
+        enough to turn into code.
+      </p>
+      <hr />
+
+      <section class="project">
+        <h2>
+          <a href="https://github.com/RishabhK103/AIscrapper">
+            <u>AI Scraper | AI-Powered Web Scraping Tool</u> 🔗
+          </a>
+        </h2>
+        <p>
+          <em>
+            2025 | Python, Streamlit, Selenium, BeautifulSoup, Groq API, Ollama
+          </em>
+        </p>
+        <p>
+          AI Scraper is a tool built to scrape, clean, and extract meaningful
+          information from websites using natural language instructions. It
+          uses Selenium to fetch raw HTML, cleans unnecessary elements, and
+          allows users to ask in plain English what data they want extracted.
+          The extraction can be powered by Groq’s cloud API for speed or a local
+          Ollama LLaMA3 model for privacy, all wrapped in a simple Streamlit UI
+          for quick experimentation.
+        </p>
+      </section>
+
+      <section class="project">
+        <h2>
+          <a href="https://github.com/RishabhK103/sysdash">
+            <u>sysdash | Terminal-Based System Resource Monitor</u> 🔗
+          </a>
+        </h2>
+        <p>
+          <em>
+            2025 | Rust, ratatui, sysinfo, crossterm
+          </em>
+        </p>
+        <p>
+          sysdash is a terminal-based system monitoring tool written in Rust that
+          displays real-time CPU, memory, and disk usage in a clean text UI. It
+          uses ratatui for rendering interactive gauges, sysinfo for system
+          metrics, and crossterm for terminal control. The dashboard refreshes
+          every 100ms, shows per-core CPU usage, memory consumption, disk space
+          stats, and allows users to exit instantly with a single keypress.
+        </p>
+      </section>
+    </div>
+
+    <script>
+      const toggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+
+      // Load saved theme from localStorage
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light");
+        toggle.checked = true;
+        themeIcon.textContent = "☀️";
+      }
+
+      toggle.addEventListener("change", () => {
+        document.body.classList.toggle("light");
+        const isLight = document.body.classList.contains("light");
+
+        themeIcon.textContent = isLight ? "☀️" : "🌙";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>
